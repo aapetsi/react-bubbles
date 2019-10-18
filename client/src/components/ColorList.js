@@ -20,7 +20,17 @@ const ColorList = ({ colors, updateColors }) => {
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
-    const colorName = e.target.elements[0].value
+    console.log(colorToEdit)
+    axiosWithAuth()
+      .put(`/colors/${colorToEdit.id}`, colorToEdit)
+      .then(res => {
+        axiosWithAuth()
+          .get('/colors')
+          .then(res => {
+            updateColors([...res.data])
+          })
+      })
+      .catch(err => console.log(err))
   }
 
   const deleteColor = color => {
@@ -28,18 +38,14 @@ const ColorList = ({ colors, updateColors }) => {
     axiosWithAuth()
       .delete(`/colors/${color.id}`)
       .then(res => {
-        // history.push('/bubble-page')
-        console.log(res.data)
         axiosWithAuth()
           .get('/colors')
           .then(res => {
             updateColors([...res.data])
-            console.log(res.data)
           })
           .catch(err => {
             console.log(err)
           })
-        // window.location.reload()
       })
       .catch(err => {
         console.log(err)
