@@ -6,6 +6,7 @@ import './styles.scss'
 import Navbar from './components/Navbar'
 import BubblePage from './components/BubblePage'
 import PrivateRoute from './components/PrivateRoute'
+import Logout from './components/Logout'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Navbar />
       <div className="App">
         <Route exact path="/" component={Login} />
+        <Route exact path="/logout" component={Logout} />
         <PrivateRoute path="/bubble-page" component={BubblePage} />
         {/* 
           Build a PrivateRoute component that will 
