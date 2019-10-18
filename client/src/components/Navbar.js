@@ -6,6 +6,7 @@ const Navbar = () => {
     <div>
       <NavLink to="/">Login</NavLink>
       <NavLink to="/logout">Logout</NavLink>
+      <NavLink to="/bubble-page">Bubble page</NavLink>
     </div>
   )
 }

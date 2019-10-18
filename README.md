@@ -39,7 +39,7 @@ A token is a piece of text that allows for users to be authenticated and also to
 
 - [ ] Describe how web servers work.
 
-
+A Web server is a program that uses HTTP (Hypertext Transfer Protocol) to serve the files that form Web pages to users, in response to their requests, which are forwarded by their computers' HTTP clients. Dedicated computers and appliances may be referred to as Web servers as well.
 
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
 
